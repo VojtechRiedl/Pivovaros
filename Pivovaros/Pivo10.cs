@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace Pivovaros
 {
-     class Pivo10 : Pivo, IPivo
+     class Pivo10 : Pivo
     {
-        public override void Recept()
+
+        public static int rychlostVyroby { get; private set; } = 5;
+
+        public new static void Recept()
         {
             chmel = 120f;
             voda = 750f;
             kvasinky = 200f;
             slad = 110f;
             nazev = "Pivo 10°";
-            Pivovar.VyrobPivo(chmel, slad, kvasinky, voda, RychlostVyrobyPiva(5), nazev);
+            Pivovar.VyrobPivo(chmel, slad, kvasinky, voda, nazev);
+
+            Console.WriteLine("pivo10 vyrobeno! :)");
+
         }
 
-        public int RychlostVyrobyPiva(int sec)
-        {
-            rychlostVyroby = rnd.Next(2, sec);
-            return rychlostVyroby;
-        }
+
 
         
     }

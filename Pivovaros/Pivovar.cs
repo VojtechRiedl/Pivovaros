@@ -17,9 +17,9 @@ namespace Pivovaros
         };
         //TODO dodělat počet lidí, pivka, pití
 
-        public static void VyrobPivo(float chmel, float slad, float kvasinky, float voda, int rychlostVyroby, string nazev)
+        public static void VyrobPivo(float chmel, float slad, float kvasinky, float voda, string nazev)
         {
-            if (Skladiste.ZjistiZasoby(chmel, slad, kvasinky, voda) == true)
+            if (Skladiste.ZjistiZasoby(chmel, slad, kvasinky, voda))
             {
                 PridejPivko(nazev);
             }

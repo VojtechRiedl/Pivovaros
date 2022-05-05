@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace Pivovaros
 {
-    internal class Pivo12
+    internal class Pivo12 : Pivo
     {
-        //TODO dodělat výrobu piva 12
+
+        public static int rychlostVyroby { get; private set; } = 10;
+        public new static void Recept()
+        {
+            slad = 130f;
+            chmel = 300f;
+            voda = 100f;
+            nazev = "Pivo 12°";
+            Pivovar.VyrobPivo(chmel, slad, kvasinky, voda, nazev);
+
+            Console.WriteLine("pivo12 vyrobeno! :)");
+
+        }
     }
 }
