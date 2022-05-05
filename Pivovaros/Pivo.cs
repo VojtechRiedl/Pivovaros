@@ -20,8 +20,7 @@ namespace Pivovaros
             chmel = 200f;
             voda = 500f;
             slad = 150f;
-            kvasinky = 180f;
-            Console.WriteLine("nazdar");
+            kvasinky = 2000f;
         }
     
     }

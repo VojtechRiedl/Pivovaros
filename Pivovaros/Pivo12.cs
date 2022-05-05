@@ -13,12 +13,12 @@ namespace Pivovaros
         public new static void Recept()
         {
             slad = 130f;
-            chmel = 300f;
+            //chmel = 300f;
             voda = 100f;
             nazev = "Pivo 12°";
-            Pivovar.VyrobPivo(chmel, slad, kvasinky, voda, nazev);
+            Pivovar.VyrobPivo(chmel, slad, voda, kvasinky, nazev);
 
-            Console.WriteLine("pivo12 vyrobeno! :)");
+            Console.WriteLine("pivo12 vyrobeno! :)" + "počet kvasinek ukradeno: " + kvasinky);
 
         }
     }

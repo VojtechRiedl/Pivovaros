@@ -29,6 +29,16 @@ namespace Pivovaros
                 return false;
             }
         }
+
+        public static void odeberSuroviny(float chmel, float slad, float voda, float kvasinky)
+        {
+            Chmel -= chmel;
+            Slad -= slad;
+            Voda -= voda;
+            Kvasinky -= kvasinky;
+
+            Console.WriteLine(Chmel.ToString() +" "+ Slad.ToString() + " " + Voda.ToString() + " " + Kvasinky.ToString());
+        }
     
     }
 }

@@ -18,7 +18,7 @@ namespace Pivovaros
             kvasinky = 200f;
             slad = 110f;
             nazev = "Pivo 10°";
-            Pivovar.VyrobPivo(chmel, slad, kvasinky, voda, nazev);
+            Pivovar.VyrobPivo(chmel, slad, voda, kvasinky, nazev);
 
             Console.WriteLine("pivo10 vyrobeno! :)");
 
