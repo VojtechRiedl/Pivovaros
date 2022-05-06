@@ -19,11 +19,10 @@ namespace Pivovaros
 
         public static void VyrobPivo(float chmel, float slad, float voda, float kvasinky, string nazev)
         {
-            if (Skladiste.ZjistiZasoby(chmel, slad, voda, kvasinky))
+            if (Skladiste.ZjistiZasoby(chmel, slad, voda, kvasinky) == true)
             {
                 PridejPivko(nazev);
-                Console.WriteLine("odebralo se: " + kvasinky);
-                Skladiste.odeberSuroviny(chmel, slad, voda, kvasinky);
+                Skladiste.OdeberSuroviny(chmel, slad, voda, kvasinky);
             }
         }
         private static void PridejPivko(string nazev)
@@ -31,17 +30,23 @@ namespace Pivovaros
             if (nazev == "Pivo 10°")
             {
                 pivoDic["10"] += 1;
+                Console.WriteLine("pivo10 vyrobeno! :)");
+
             }
             else if (nazev == "Pivo 11°")
             {
                 pivoDic["11"] += 1;
+                Console.WriteLine("pivo11 vyrobeno! :)");
+
             }
             else if (nazev == "Pivo 12°")
             {
                 pivoDic["12"] += 1;
+                Console.WriteLine("pivo12 vyrobeno! :)");
+
             }
         }
-        static void odeberPivko(string nazev)
+        static void OdeberPivko(string nazev)
         {
             if (nazev == "Pivo 10°")
             {

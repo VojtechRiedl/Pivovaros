@@ -12,9 +12,9 @@ namespace Pivovaros
         public static float Chmel { get { return chmel; } private set { chmel = value; } }
         static float slad = 50000f;
         public static float Slad { get { return slad; } private set { slad = value; } }
-        static float voda = 50000f;
+        static float voda = 50f;
         public static float Voda { get { return voda; } private set { voda = value; } }
-        static float kvasinky = 50000f;
+        static float kvasinky = 50f;
         public static float Kvasinky { get { return kvasinky; } private set { kvasinky = value; } }
 
         public static bool ZjistiZasoby(float chmel, float slad, float voda, float kvasinky)
@@ -25,12 +25,12 @@ namespace Pivovaros
             }
             else
             {
-                //TODO dodělat výpis chybějících surovin
+                CoChybi(chmel, slad, voda, kvasinky);
                 return false;
             }
         }
 
-        public static void odeberSuroviny(float chmel, float slad, float voda, float kvasinky)
+        public static void OdeberSuroviny(float chmel, float slad, float voda, float kvasinky)
         {
             Chmel -= chmel;
             Slad -= slad;
@@ -39,6 +39,29 @@ namespace Pivovaros
 
             Console.WriteLine(Chmel.ToString() +" "+ Slad.ToString() + " " + Voda.ToString() + " " + Kvasinky.ToString());
         }
+
+        private static void CoChybi(float chmel, float slad, float voda, float kvasinky)
+        {
+            List<string> coNemam = new List<string>();
+            if (Chmel < chmel) coNemam.Add("Chmel");
+            if (Slad < slad) coNemam.Add("Slad");
+            if (Voda < voda) coNemam.Add("voda");
+            if (Kvasinky < kvasinky) coNemam.Add("Kvasinky");
+
+            if (coNemam.Count == 0)
+            {
+                Console.WriteLine("Mám vše");
+            }
+            else
+            {
+                String text = "Nemám:";
+                foreach (string item in coNemam)
+                {
+                    text += " " + item;
+                }
+                Console.WriteLine(text);
+            }
+        } 
     
     }
 }

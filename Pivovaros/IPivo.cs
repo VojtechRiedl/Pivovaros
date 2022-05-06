@@ -10,7 +10,7 @@ namespace Pivovaros
     {
         //Interface pro výrobu piva
         //TODO: Metody pro výrobu piva
-        int RychlostVyrobyPiva(int sec);
-       
+
+
     }
 }

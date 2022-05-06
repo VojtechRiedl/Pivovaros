@@ -8,20 +8,11 @@ namespace Pivovaros
 {
     internal class Pivo
     {
-        protected static float chmel { get; set; }
-        protected static float voda { get; set; }
-        protected static float slad { get; set; }
-        protected static float kvasinky { get; set; }
-        protected static string nazev { get; set; }
+        public static int rychlostVyroby {  get; protected set; } = 1;
+        public static float chmel { get; protected set; } = 230f;
+        public static float voda { get; protected set; } = 180f;
+        public static float slad { get; protected set; } = 500f;
+        public static float kvasinky { get; protected set; } = 350f;
 
-        protected Random rnd = new Random();
-
-        public static void Recept() {
-            chmel = 200f;
-            voda = 500f;
-            slad = 150f;
-            kvasinky = 2000f;
-        }
-    
     }
 }
