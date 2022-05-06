@@ -8,20 +8,21 @@ namespace Pivovaros
 {
     internal class Clovek
     {
-        Random rnd = new Random();
-        string jmeno; //jméno
+        private static string[] jmena = { "Břetislav","Nikola","Evžen","Pepa", "Tomáš", "Veronika", "Miroslav", "Michal", "Petra"};
+        private Random rd = new Random();
+        public string jmeno; //jméno
         int vek; //jeho věk
         int zustatek; //počet peněz
         int pocetPiv; //kolik vypil piv
         float naladaCislo; //Range 0-100 pro náladu
         bool nalada; //Dobrá - špatná
 
-        public Clovek(string jmeno, int vek) {
-            this.jmeno = jmeno;
-            this.vek = vek;
-            zustatek = rnd.Next(200, 1500);
+        public Clovek() {
+            jmeno = jmena[rd.Next(jmena.Length)];
+            vek = rd.Next(18,50);
+            zustatek = rd.Next(200, 1500);
             pocetPiv = 0;
-            naladaCislo = rnd.Next(0, 100);
+            naladaCislo = rd.Next(0, 100);
             if (naladaCislo <  50)
             {
                 nalada = false;

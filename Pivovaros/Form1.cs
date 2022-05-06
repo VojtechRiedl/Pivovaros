@@ -49,6 +49,8 @@ namespace Pivovaros
             if ((counter % (Pivo12.rychlostVyroby * 10)) == 0) 
             {
                 Pivo12.Recept();
+                Hospoda.PrisliZakaznici();
+                Hospoda.vypis();
             }
         }
     }

@@ -12,9 +12,9 @@ namespace Pivovaros
         public static float Chmel { get { return chmel; } private set { chmel = value; } }
         static float slad = 50000f;
         public static float Slad { get { return slad; } private set { slad = value; } }
-        static float voda = 50f;
+        static float voda = 50000f;
         public static float Voda { get { return voda; } private set { voda = value; } }
-        static float kvasinky = 50f;
+        static float kvasinky = 50000f;
         public static float Kvasinky { get { return kvasinky; } private set { kvasinky = value; } }
 
         public static bool ZjistiZasoby(float chmel, float slad, float voda, float kvasinky)
