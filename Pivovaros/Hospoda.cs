@@ -10,35 +10,66 @@ namespace Pivovaros
     {
         private static Random rd = new Random();
         public static List<Clovek> zakaznici = new List<Clovek>();
+        public static Dictionary<string, int> pivoSklad = new Dictionary<string, int>()
+        {
+            {"10", 0},
+            {"11", 0},
+            {"12", 0}
+        };
 
-        private static int obsazenost = 0;
 
 
         public static void PrisliZakaznici()
         {
             int pocet = rd.Next(1,5);
-            if (!jeObsazeno(pocet))
+            if (!JeObsazeno(pocet))
             {
+                Console.WriteLine(pocet);
                 for (int i = 0; i <= pocet - 1; i++)
                 {
                     zakaznici.Add(new Clovek());
+                    Console.WriteLine(zakaznici.Count);
                 }
             }
          
         }
 
-        private static bool jeObsazeno(int pocet)
+        public static void OdejdouZakaznici()
         {
-            return pocet + obsazenost > 50;
+            if (JeNekdoVHospode())
+            {
+                for (int i = 0; i < zakaznici.Count; i++)
+                {
+                    if (zakaznici[i].CasOdejit())
+                    {
+                        zakaznici.RemoveAt(i);
+                    }
+                }
+            }
+        }
+
+        private static bool JeObsazeno(int pocet)
+        {
+            return pocet + zakaznici.Count > 50;
         } 
-
-
+        private static bool JeNekdoVHospode()
+        {
+            return zakaznici.Count > 0;
+        }
+        public static void CasPit()
+        {
+            if (JeNekdoVHospode())
+            {
+                zakaznici[rd.Next(zakaznici.Count)].pocetPiv++;
+            }
+        }
 
         public static void vypis()
         {
-            foreach (Clovek item in zakaznici)
+            foreach (Clovek zakaznik in zakaznici)
             {
-                Console.WriteLine(item.jmeno);
+                Console.WriteLine(zakaznik.jmeno);
+                Console.WriteLine("Obsazenost je:" + zakaznici.Count);
             }
         }
     }
