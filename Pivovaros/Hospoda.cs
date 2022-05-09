@@ -64,6 +64,20 @@ namespace Pivovaros
             }
         }
 
+        public static bool PotrebujemePivco()
+        {
+            int celkemPivca = 0 ;
+            foreach (var pivo in pivoSklad)
+            {
+                if(pivo.Value > 0)
+                {
+                    celkemPivca += pivo.Value;
+                }
+            }
+            if (celkemPivca >= 0) return true;
+            return false;
+        }
+
         public static void vypis()
         {
             foreach (Clovek zakaznik in zakaznici)
@@ -72,5 +86,6 @@ namespace Pivovaros
                 Console.WriteLine("Obsazenost je:" + zakaznici.Count);
             }
         }
+
     }
 }

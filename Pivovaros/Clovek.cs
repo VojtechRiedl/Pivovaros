@@ -25,7 +25,7 @@ namespace Pivovaros
             pocetPiv = 0;
             maxPiv = rd.Next(5, 15);
             naladaCislo = rd.Next(0, 100);
-            if (naladaCislo <  50)
+            if (naladaCislo < 50)
             {
                 nalada = false;
             }
