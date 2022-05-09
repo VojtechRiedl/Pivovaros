@@ -21,10 +21,9 @@ namespace Pivovaros
             JeCasVyrabet();
             OdeselPrisel();
             Piticko();
+            DodavkaPiti();
 
 
-            Console.WriteLine("hos: " + Hospoda.pivoSklad["10"]);
-            Console.WriteLine("piv: " + Pivovar.pivoDic["10"]);
 
             //Console.WriteLine(counter);
 
@@ -44,7 +43,6 @@ namespace Pivovaros
             if ((counter % (Pivo12.rychlostVyroby * 10)) == 0)
             {
                 Pivo12.Recept();
-                Dodavatel.dodavka();
             }
         }
 
@@ -66,6 +64,16 @@ namespace Pivovaros
         {
             if (counter % (rd.Next(1, 11)) == 0) Hospoda.CasPit();
 
+        }
+
+        private static void DodavkaPiti()
+        {
+            if (Hospoda.PotrebujemePivco())
+            {
+                Dodavatel.Dodavka();
+                Console.WriteLine("hos: " + Hospoda.pivoSklad["10"]);
+                Console.WriteLine("piv: " + Pivovar.pivoDic["10"]);
+            }
         }
     }
 }

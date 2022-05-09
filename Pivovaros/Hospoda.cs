@@ -28,7 +28,6 @@ namespace Pivovaros
                 for (int i = 0; i <= pocet - 1; i++)
                 {
                     zakaznici.Add(new Clovek());
-                    Console.WriteLine(zakaznici.Count);
                 }
             }
          
@@ -61,6 +60,21 @@ namespace Pivovaros
             if (JeNekdoVHospode())
             {
                 zakaznici[rd.Next(zakaznici.Count)].pocetPiv++;
+                int index = rd.Next(Hospoda.pivoSklad.Count);
+                if (Hospoda.pivoSklad.Keys.ElementAt(index) == "10")
+                {
+                    Hospoda.pivoSklad["10"] -= 1;
+                }else if(Hospoda.pivoSklad.Keys.ElementAt(index) == "11")
+                {
+                    Hospoda.pivoSklad["11"] -= 1;
+
+                }
+                else if (Hospoda.pivoSklad.Keys.ElementAt(index) == "12")
+                {
+                    Hospoda.pivoSklad["12"] -= 1;
+
+                }
+
             }
         }
 
@@ -74,7 +88,7 @@ namespace Pivovaros
                     celkemPivca += pivo.Value;
                 }
             }
-            if (celkemPivca >= 0) return true;
+            if (celkemPivca == 0) return true;
             return false;
         }
 

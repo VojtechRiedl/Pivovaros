@@ -9,7 +9,7 @@ namespace Pivovaros
     internal class Dodavatel
     {
         private static Random rd = new Random();
-        public static void dodavka()
+        public static void Dodavka()
         {
             if(Pivovar.MameDostatekPivca() && Hospoda.PotrebujemePivco())
             {
@@ -20,17 +20,19 @@ namespace Pivovaros
                     if (index == "10" && Pivovar.MameDostatekPivca(index))
                     {
                         Hospoda.pivoSklad["10"] += 1;
-                        Pivovar.pivoDic["10"] -= 1;
+                        Pivovar.OdeberPivko("Pivo 10°");
                     }
                     else if (index == "11" && Pivovar.MameDostatekPivca(index))
                     {
                         Hospoda.pivoSklad["11"] += 1;
-                        Pivovar.pivoDic["11"] -= 1;
+                        Pivovar.OdeberPivko("Pivo 11°");
+
                     }
                     else if (index == "12" && Pivovar.MameDostatekPivca(index))
                     {
                         Hospoda.pivoSklad["12"] += 1;
-                        Pivovar.pivoDic["12"] -= 1;
+                        Pivovar.OdeberPivko("Pivo 12°");
+
                     }
                 }
             }

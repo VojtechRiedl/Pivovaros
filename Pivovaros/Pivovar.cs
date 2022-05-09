@@ -61,7 +61,7 @@ namespace Pivovaros
 
             return false;
         }
-        static void OdeberPivko(string nazev)
+        public static void OdeberPivko(string nazev)
         {
             if (nazev == "Pivo 10°")
             {
