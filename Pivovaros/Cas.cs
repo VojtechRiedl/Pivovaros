@@ -71,8 +71,8 @@ namespace Pivovaros
             if (Hospoda.PotrebujemePivco())
             {
                 Dodavatel.Dodavka();
-                Console.WriteLine("hos: " + Hospoda.pivoSklad["10"]);
-                Console.WriteLine("piv: " + Pivovar.pivoDic["10"]);
+                //Console.WriteLine("hos: " + Hospoda.pivoSklad["10"]);
+                //Console.WriteLine("piv: " + Pivovar.pivoDic["10"]);
             }
         }
     }

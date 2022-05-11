@@ -8,11 +8,7 @@ namespace Pivovaros
 {
      class Pivo10 : Pivo
     {
-        public new static int rychlostVyroby { get; private set; } = 5;
-        private new static float slad { get; set; }
-        private new static float voda { get; set; }
-        private new static float chmel { get; set; }
-        private new static float kvasinky { get; set; }
+        public static int rychlostVyroby { get; private set; } = 5;
 
         private static string nazev { get; set; }
 

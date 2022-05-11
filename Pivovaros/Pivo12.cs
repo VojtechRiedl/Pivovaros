@@ -8,10 +8,7 @@ namespace Pivovaros
 {
     internal class Pivo12 : Pivo
     {
-        public new static int rychlostVyroby { get; private set; } = 10;
-        private new static float slad { get;  set; }
-        private new static float voda { get;  set; } 
-        private new static float chmel { get;  set; }
+        public static int rychlostVyroby { get; private set; } = 10;
         private static string nazev { get; set; }
 
 
@@ -20,6 +17,7 @@ namespace Pivovaros
             slad = 130f;
             chmel = 300f;
             voda = 100f;
+            kvasinky = 200f;
             nazev = "Pivo 12°";
 
             Pivovar.VyrobPivo(chmel, slad, voda, kvasinky, nazev);

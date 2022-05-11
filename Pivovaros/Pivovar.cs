@@ -21,6 +21,7 @@ namespace Pivovaros
         {
             if (Skladiste.ZjistiZasoby(chmel, slad, voda, kvasinky) == true)
             {
+                Console.WriteLine(voda);
                 PridejPivko(nazev);
                 Skladiste.OdeberSuroviny(chmel, slad, voda, kvasinky);
             }
